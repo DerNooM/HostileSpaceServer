@@ -9,6 +9,7 @@ namespace HostileSpaceServer
 {
     class Game
     {
+        
         HostileSpaceServer server;
 
         SpaceShip playerShip;
@@ -27,6 +28,7 @@ namespace HostileSpaceServer
 
         private void Client_PacketReceieved(object sender, EventArgs e)
         {
+            /*
             switch (client.Packet.ID)
             {
                 case PacketID.SetDestination:
@@ -37,32 +39,32 @@ namespace HostileSpaceServer
 
                     }
                     break;
-            }
+            }*/
         }
 
-
+        
         public void Update(Time Elapsed)
         {
+            /*
             playerShip.Update(Elapsed);
 
-            UpdateShip updateShip = new UpdateShip(playerShip.ShipData);
             if (client.Connected)
             {
+                UpdateShip updateShip = new UpdateShip(playerShip.ShipData);
                 client.BeginSend(updateShip.Packet);
                 
             }
             else
             {
-                
-            }
+            }*/
         }
 
 
+        
         public Client Client
         {
             get { return client; }
         }
-
 
     }
 }

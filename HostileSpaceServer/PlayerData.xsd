@@ -15,9 +15,19 @@
         <xs:element name="AccountData" msprop:Generator_TableClassName="AccountDataDataTable" msprop:Generator_TableVarName="tableAccountData" msprop:Generator_TablePropName="AccountData" msprop:Generator_RowDeletingName="AccountDataRowDeleting" msprop:Generator_RowChangingName="AccountDataRowChanging" msprop:Generator_RowEvHandlerName="AccountDataRowChangeEventHandler" msprop:Generator_RowDeletedName="AccountDataRowDeleted" msprop:Generator_UserTableName="AccountData" msprop:Generator_RowChangedName="AccountDataRowChanged" msprop:Generator_RowEvArgName="AccountDataRowChangeEvent" msprop:Generator_RowClassName="AccountDataRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="AccountName" msprop:Generator_ColumnVarNameInTable="columnAccountName" msprop:Generator_ColumnPropNameInRow="AccountName" msprop:Generator_ColumnPropNameInTable="AccountNameColumn" msprop:Generator_UserColumnName="AccountName" type="xs:string" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" />
               <xs:element name="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_UserColumnName="Password" type="xs:base64Binary" />
               <xs:element name="IsGM" msprop:Generator_ColumnVarNameInTable="columnIsGM" msprop:Generator_ColumnPropNameInRow="IsGM" msprop:Generator_ColumnPropNameInTable="IsGMColumn" msprop:Generator_UserColumnName="IsGM" type="xs:boolean" default="false" />
+              <xs:element name="ID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CharacterData" msprop:Generator_TableClassName="CharacterDataDataTable" msprop:Generator_TableVarName="tableCharacterData" msprop:Generator_RowChangedName="CharacterDataRowChanged" msprop:Generator_TablePropName="CharacterData" msprop:Generator_RowDeletingName="CharacterDataRowDeleting" msprop:Generator_RowChangingName="CharacterDataRowChanging" msprop:Generator_RowEvHandlerName="CharacterDataRowChangeEventHandler" msprop:Generator_RowDeletedName="CharacterDataRowDeleted" msprop:Generator_RowClassName="CharacterDataRow" msprop:Generator_UserTableName="CharacterData" msprop:Generator_RowEvArgName="CharacterDataRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" />
+              <xs:element name="Image" msprop:Generator_ColumnVarNameInTable="columnImage" msprop:Generator_ColumnPropNameInRow="Image" msprop:Generator_ColumnPropNameInTable="ImageColumn" msprop:Generator_UserColumnName="Image" type="xs:unsignedByte" />
+              <xs:element name="AccountID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnAccountID" msprop:Generator_ColumnPropNameInRow="AccountID" msprop:Generator_ColumnPropNameInTable="AccountIDColumn" msprop:Generator_UserColumnName="AccountID" type="xs:string" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -25,7 +35,16 @@
     </xs:complexType>
     <xs:unique name="AccountDataKey1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:AccountData" />
-      <xs:field xpath="mstns:AccountName" />
+      <xs:field xpath="mstns:Name" />
+    </xs:unique>
+    <xs:unique name="CharacterDataKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CharacterData" />
+      <xs:field xpath="mstns:Name" />
     </xs:unique>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="AccountData_CharacterData" msdata:parent="AccountData" msdata:child="CharacterData" msdata:parentkey="ID" msdata:childkey="AccountID" msprop:Generator_UserChildTable="CharacterData" msprop:Generator_ChildPropName="GetCharacterDataRows" msprop:Generator_UserRelationName="AccountData_CharacterData" msprop:Generator_ParentPropName="AccountDataRow" msprop:Generator_RelationVarName="relationAccountData_CharacterData" msprop:Generator_UserParentTable="AccountData" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>

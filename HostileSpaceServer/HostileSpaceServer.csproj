@@ -51,12 +51,16 @@
   <ItemGroup>
     <Compile Include="Game.cs" />
     <Compile Include="HostileSpaceServer.cs" />
+    <Compile Include="IServerComponent.cs" />
+    <Compile Include="LoginHandler.cs" />
+    <Compile Include="GameClient.cs" />
     <Compile Include="PlayerData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PlayerData.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerComponent.cs" />
     <Compile Include="SpaceShip.cs" />
   </ItemGroup>
   <ItemGroup>

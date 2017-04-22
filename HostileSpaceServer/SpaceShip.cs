@@ -8,9 +8,9 @@ namespace HostileSpaceServer
 {
     class SpaceShip
     {
-        UpdateShip.ShipData shipData = new UpdateShip.ShipData();
+        //UpdateShip.ShipData shipData = new UpdateShip.ShipData();
         Vector2f direction = new Vector2f(0, 0);
-
+        /*
 
         Single acceleration = 0.0f;
         Single maxSpeed = 0.3f;
@@ -126,6 +126,6 @@ namespace HostileSpaceServer
             get { return shipData; }
         }
 
-
+    */
     }
 }
